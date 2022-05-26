@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+ 
+
+<div id="posts">
+
+<table class="table">
+<tr>
+  <th>title</th>
+  <th>content</th>
+  <th>author</th>
+  <th>ver</th>
+  
+</tr>
+
+
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <td><%= post.author %></td>
+      <td><%= link_to "Show this post", post %></td>
+    </tr>
+        
+  <% end %>
+</table>
+
+<%= paginate(@posts) %>
+
+</div>
+
+<%= link_to "New post", new_post_path %>
